@@ -43,3 +43,7 @@ bot.on("message", async message => {
 });
 
 bot.login(token);
+
+process.on('unhandledRejection', error => {
+    console.error(`Uncaught Promise Error: \n${error.stack}`);
+});

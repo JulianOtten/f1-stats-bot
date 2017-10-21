@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, arguments) => {
 
         let driverStandings = standingsObject.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 
-        if (driverStandings > 25) return message.channel.send("I am sorry, but somehow there are more than 25 gridspots,  which means I will not be able to show you the grid... :(")
+        if (driverStandings.length > 25) return message.channel.send("I am sorry, but somehow there are more than 25 gridspots,  which means I will not be able to show you the grid... :(")
 
         let embed = new discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL)
