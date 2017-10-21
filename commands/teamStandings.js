@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, arguments) => {
 
         let embed = new discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL)
-            .setTitle(`Current f1 team standings: \n`)
+            .setTitle(`:checkered_flag:Current f1 team standings: \n`)
 
         for (let i = 0; i < driverStandings.length; i++) {
             embed.addField(`${driverStandings[i].Constructor.constructorId} #${driverStandings[i].position}`,

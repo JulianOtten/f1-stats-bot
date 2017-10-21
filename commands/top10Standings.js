@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, arguments) => {
             .setTitle(`:checkered_flag:Current f1 driver standings: \n`)
 
 
-        for (let i = 0; i < driverStandings.length; i++) {
+        for (let i = 0; i < 10; i++) {
             let number;
             if (!driverStandings[i].Driver.permanentNumber) number = "00";
             else number = driverStandings[i].Driver.permanentNumber;
@@ -31,5 +31,5 @@ module.exports.run = async(bot, message, arguments) => {
 }
 
 module.exports.help = {
-    name: "standings"
+    name: "top10Standings"
 }
