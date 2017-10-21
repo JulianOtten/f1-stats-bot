@@ -13,8 +13,13 @@ module.exports.run = async(bot, message, arguments) => {
         let embed = new discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL)
             .setTitle(`Current f1 driver standings: \n`)
+
+
         for (let i = 0; i < driverStandings.length; i++) {
-            embed.addField(`${driverStandings[i].Driver.code} (${driverStandings[i].Driver.permanentNumber}) #${driverStandings[i].position}`,
+            let number;
+            if (!driverStandings[i].Driver.permanentNumber) number = "00";
+            else number = driverStandings[i].Driver.permanentNumber;
+            embed.addField(`${driverStandings[i].Driver.code} (${number}) #${driverStandings[i].position}`,
                 `Name: ${driverStandings[i].Driver.givenName} ${driverStandings[i].Driver.familyName} \nDriver for: ${driverStandings[i].Constructors[0].name} \nPoints: ${driverStandings[i].points} \nWins: ${driverStandings[i].wins}`, true)
         }
         embed.setFooter('F1Bot©', bot.user.avatarURL)
