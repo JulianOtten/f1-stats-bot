@@ -39,7 +39,7 @@ bot.on("message", async message => {
     if (!command.startsWith(prefix)) return;
 
     let cmd = bot.commands.get(command.slice(prefix.length));
-    if (cmd) cmd.run(bot, message, arguments, discord);
+    if (cmd) cmd.run(bot, message, arguments);
 });
 
 bot.login(token);
