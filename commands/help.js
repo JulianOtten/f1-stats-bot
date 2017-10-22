@@ -9,7 +9,7 @@ module.exports.run = async(bot, message, arguments) => {
 
         output += `${bot.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
     });
-    message.reply("Help has been send :incoming_envelope: ")
+    message.reply("Help has been sent :incoming_envelope: ")
     message.author.send(output, { code: 'asciidoc', split: true });
 }
 
