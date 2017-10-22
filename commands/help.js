@@ -1,11 +1,16 @@
 module.exports.run = async(bot, message, arguments) => {
-    const cmds = bot.commands;
+    const myCommands = bot.commands;
+    const commandNames = myCommands.keyArray();
+    const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
+    let currentCategory = '';
+    let output = `= Command List =\n`;
+    const sorted = myCommands.array().sort((p, c) => p.help.name > c.help.name);
+    sorted.forEach(c => {
 
-    const help = {};
-
-    cmds.map(c => help[c.help.name] = c.help.description);
-
-    console.log(help);
+        output += `${bot.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
+    });
+    message.reply("I have send you the help command! :incoming_envelope: ")
+    message.author.send(output, { code: 'asciidoc', split: true });
 }
 
 module.exports.help = {
