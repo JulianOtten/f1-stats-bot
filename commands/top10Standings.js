@@ -32,5 +32,5 @@ module.exports.run = async(bot, message, arguments) => {
 
 module.exports.help = {
     name: "top10Standings",
-    description: "Same as standings, but only shows you the top 10 drivers rather than all the drivers. mainly usefull if standings takes up too much space or if it does not work because there are too many drivers that season"
+    description: "Same as standings, but only shows you the top 10 drivers rather than all the drivers."
 }
