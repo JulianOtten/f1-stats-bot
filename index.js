@@ -28,7 +28,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async() => {
     console.log(`${bot.user.username} is ready to party!`);
-    bot.user.setGame(`prefix: ${prefix} | Playing in ${bot.guilds.size} guilds`)
+    bot.user.setGame(`${prefix}help | Playing in ${bot.guilds.size} guilds`)
 });
 
 bot.on("message", async message => {
