@@ -10,11 +10,9 @@ module.exports.run = async(bot, message, arguments) => {
         .setTitle(":mailbox_with_mail: Command List")
         .setAuthor(message.author.username, message.author.avatarURL)
 
-    // let output = `= Command List =\n`;
     const sorted = myCommands.array().sort((p, c) => p.help.name > c.help.name);
     sorted.forEach(c => {
         embed.addField(`${bot.prefix}${c.help.name}`, `${c.help.description}`)
-            // output += `${bot.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}\n`;
     });
     embed.setFooter('F1Bot©', bot.user.avatarURL)
         .setThumbnail(bot.user.avatarURL)
