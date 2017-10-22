@@ -6,6 +6,8 @@ const fs = require('fs');
 const prefix = settings.prefix;
 const token = settings.token;
 
+bot.prefix = prefix;
+
 bot.commands = new discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {

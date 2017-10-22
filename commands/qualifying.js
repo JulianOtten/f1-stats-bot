@@ -40,5 +40,6 @@ module.exports.run = async(bot, message, arguments) => {
 }
 
 module.exports.help = {
-    name: "qualifying"
+    name: "qualifying",
+    description: "Information about the results of the upcoming grandprix qualifyings (might return no results if you use this inbetween races!)"
 }

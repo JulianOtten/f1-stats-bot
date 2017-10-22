@@ -39,5 +39,6 @@ module.exports.run = async(bot, message, arguments) => {
 }
 
 module.exports.help = {
-    name: "nextRace"
+    name: "nextRace",
+    description: "Get information on when and where the next formula one race will be"
 }

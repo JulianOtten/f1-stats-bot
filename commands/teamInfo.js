@@ -39,5 +39,6 @@ module.exports.run = async(bot, message, arguments) => {
     }
 }
 module.exports.help = {
-    name: "teamInfo"
+    name: "teamInfo",
+    description: `Get some really basic information about a team. usage: f1!teamInfo \`ferrari\``
 }

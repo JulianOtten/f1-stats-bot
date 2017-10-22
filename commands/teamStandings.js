@@ -27,5 +27,6 @@ module.exports.run = async(bot, message, arguments) => {
 }
 
 module.exports.help = {
-    name: "teamStandings"
+    name: "teamStandings",
+    description: "Get the leaderboards for all the wins and points a team has earned for the current season."
 }

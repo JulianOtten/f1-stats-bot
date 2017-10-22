@@ -31,5 +31,6 @@ module.exports.run = async(bot, message, arguments) => {
 }
 
 module.exports.help = {
-    name: "standings"
+    name: "standings",
+    description: "Return a table with all the points/wins the drivers earned so far. Basically the leaderboards"
 }
