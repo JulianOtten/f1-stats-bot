@@ -11,25 +11,30 @@ module.exports.run = async(bot, message, arguments) => {
         let year = Number(dateString[0])
         let month = Number(dateString[1]);
         let day = Number(dateString[2]);
-
         let timeString = races.time.split(":")
         let hour = Number(timeString[0]);
         let minute = Number(timeString[1]);
 
         let date = new Date();
-        date.setUTCFullYear(year);
-        date.setUTCMonth(month);
-        date.setUTCDate(day);
-        date.setUTCHours(hour);
-        date.setUTCMinutes(minute);
-        date.setUTCSeconds(0, 0)
+        date.setFullYear(year);
+        date.setMonth(month);
+        date.setDate(day);
+        date.setHours(hour);
+        date.setMinutes(minute);
+        date.setSeconds(0, 0);
+
+        let raceTime;
+        if (date.getHours() < 10) raceTime = `0${date.getHours()}`;
+        else raceTime = date.getHours();
+
+        var ml = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
         let embed = new discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL)
             .setTitle(`${races.raceName}`)
             .addField(`Circuit Name:`, races.Circuit.circuitName, true)
             .addField('Location:', `${races.Circuit.Location.locality} - ${races.Circuit.Location.country}`, true)
-            .addField('Start:', ` ${date.toUTCString()}`)
+            .addField('Start:', `Sun ${date.getDate()} ${ml[date.getMonth() - 1]} ${date.getFullYear()} | ${raceTime}:00 GMT`)
             .setFooter('F1Bot©', bot.user.avatarURL)
             .setThumbnail(bot.user.avatarURL)
             .setTimestamp(new Date())
