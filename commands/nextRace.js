@@ -20,7 +20,7 @@ module.exports.run = async(bot, message, arguments) => {
             .setTitle(`${races.raceName}`)
             .addField(`Circuit Name:`, races.Circuit.circuitName, true)
             .addField('Location:', `${races.Circuit.Location.locality} - ${races.Circuit.Location.country}`, true)
-            .addField('Start:', `Sun ${day} ${month} ${year} | ${hour}:00 GMT`)
+            .addField('Start:', `Sun ${day}-${month}-${year} | ${hour}:00 GMT`)
             .setFooter('F1Bot©', bot.user.avatarURL)
             .setThumbnail(bot.user.avatarURL)
             .setTimestamp(new Date())
